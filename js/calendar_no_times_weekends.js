@@ -19,7 +19,7 @@ var DoW = getDayOfWeek(new Date());
 
 window.onload = function () {
     countdown = document.getElementById("cd");
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= class_normal; i++) {
         subject_elems[i - 1] = document.getElementsByClassName(`subj_${i}`)[0];
     }
 
@@ -82,7 +82,7 @@ setInterval(() => {
     // console.log(cur);
 
     // console.log(DoW);
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < class_normal; i++) {
         let time = data_obj["times_normal"][i];
         var time_next;
         if (i <= 8) time_next = data_obj["times_normal"][i + 1];
