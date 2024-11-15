@@ -1,0 +1,15 @@
+body::before {
+    content:'';
+    position:absolute;
+    top:-10%;
+    left:-10%;
+    width:120%;
+    height:120%;
+    /* 默认背景颜色 */
+    background-color: rgb(105, 105, 105);
+    z-index:-1;
+    background-size:cover;
+    overflow: hidden;
+
+    background-size: cover;
+}
