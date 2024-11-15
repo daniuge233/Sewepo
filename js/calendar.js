@@ -2,6 +2,9 @@
 // 懒得做服务器了()
 const data = '{"classes":{"1":["语","数","生","化","历","英","体","班","活"],"2":["英","物","数","数","语","地","政","美","活"],"3":["英","数","语","物","化","心","信","自","自"],"4":["英","语","数","音","通","体","生","历","自"],"5":["数","英","化","政","地","语","物","自","自"],"6":["英","英","数","数","物","化","自","活"],"7":["地","历","语","语","生","政","自","活"]},"times_normal":[27000,30000,34800,37800,40800,49800,52800,57300,60300],"times_weekends":[27600,31200,34800,38400,49800,53400,57000,60600]}';
 
+const classes_normal = 9;
+const classes_weekends = 8;
+
 var countdown;      // 时间
 var now;        // 当前的Date对象
 var subject_elems = [];     // 课表对象
@@ -16,7 +19,7 @@ var DoW = getDayOfWeek(new Date());
 
 window.onload = function () {
     countdown = document.getElementById("cd");
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= classes_normal; i++) {
         subject_elems[i - 1] = document.getElementsByClassName(`subj_${i}`)[0];
     }
 
@@ -25,12 +28,12 @@ window.onload = function () {
     data_obj = jQuery.parseJSON(data);
     let calendar = data_obj.classes[DoW.toString()];
     if (DoW != 6 && DoW != 7) {
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < classes_normal; i++) {
             subject_elems[i].innerHTML = calendar[i];
         }
     } else {
         subject_elems[0].remove();
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < classes_weekends; i++) {
             subject_elems[i + 1].innerHTML = calendar[i];
         }
     }
@@ -88,7 +91,7 @@ setInterval(() => {
     // console.log(DoW);
 
     if (DoW != 6 && DoW != 7) {
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < classes_normal; i++) {
             let time = data_obj["times_normal"][i];
             var time_next;
             if (i <= 8) time_next = data_obj["times_normal"][i + 1];
@@ -107,7 +110,7 @@ setInterval(() => {
         }
 
     } else {
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < classes_weekends; i++) {
             let time = data_obj["times_weekends"][i];
             var time_next;
             if (i <= 7) time_next = data_obj["times_weekends"][i + 1];
