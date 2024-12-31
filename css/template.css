@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* background: url() center/cover no-repeat; */
+    overflow: hidden;
+    color: white;
+    user-select: none;
+    -webkit-user-select: none;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+body::before {
+    content:'';
+    position:absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+    background-color: rgb(105, 105, 105);
+    z-index:-1;
+    background-size:cover;
+    overflow: hidden;
+    background-size: cover;
+}
+
+span, i {
+    margin-left: 8%;
+    display: flex;
+}
+
+@font-face {
+    font-family: qweather-icons;
+    src: url("../font/qweather-icons.ttf");
+}
+
+i {
+    font-family: qweather-icons;
+}
+
+.container {
+    position: relative;
+    display: inline-flexbox;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;  
+    width: 100%;
+    height: 100%;   
+}
+
+.box {
+    position: relative;
+    /* display: block; */
+    background-color: rgba(210, 210, 210, 0.2);
+    border-radius: 17px;
+
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.btn {
+    text-align: center;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+#content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 70vw;
+}
+
+#subject {
+    transition: all 0.25s;
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-size: 150%;
+    font-weight: bold
+}
+
+.subject_selected {
+    /* background-color: rgba(233, 233, 233, 0.3); */
+    transform: scale(1.5);
+    width: 2.1vw;
+    height: 2.1vw;
+    line-height: 2.1vw;
+    color: rgb(255, 250, 240);
+
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: bgcolor;
+}
+
+@keyframes bgcolor {
+    0% {
+        color: #c44040;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #c44040 80%, white 20%);
+    }
+
+    10% {
+        color: #c48040;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #c48040 80%, white 20%);
+    }
+
+    20% {
+        color: #80c440;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #80c440 80%, white 20%);
+    }
+
+    30% {
+        color: #40c440;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #40c440 80%, white 20%);
+    }
+
+    40% {
+        color: #40c480;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #40c480 80%, white 20%);
+    }
+
+    50% {
+        color: #4080c4;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #4080c4 80%, white 20%);
+    }
+
+    60% {
+        color: #4040c4;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #4040c4 80%, white 20%);
+    }
+
+    70% {
+        color: #8040c4;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #8040c4 80%, white 20%);
+    }
+
+    80% {
+        color: #c44080;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #c44080 80%, white 20%);
+    }
+
+    90% {
+        color: #c44060;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #c44060 80%, white 20%);
+    }
+
+    100% {
+        color: #c44040;
+        text-shadow: 0px 0px 1vw color-mix(in srgb, #c44040 80%, white 20%);
+    }
+}
