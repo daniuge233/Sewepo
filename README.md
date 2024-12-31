@@ -30,13 +30,15 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 > 不论您是否使用自定义背景图片功能，程序都将有概率从API上获取图片。使用该功能则概率约50%，不使用则为100%。<br/>
 
 3. 编辑<code>/server/data/data.json</code>，将"classes"中，以序号为星期，按照文件中给定的格式填写课表。
-> [!CAUTION]
-> 如果您的每日课程数与我们的不符（工作日9节，双休日8节），则需要调整<code>/js/index.js</code>中<code>UpdateCalendar</code>函数的循环次数。修改过程比较繁琐，有需要请自行研究。<br/>这个问题将在近期解决。
 
 编辑该json文件的"times_normal"和"times_weekends"，将它们设置为每节课上课的时间，按照<code>一天中第__秒</code>计算。
 > [!TIP]
 > 推荐设置为上课时间提前课间的时间。<br/>
 > 一天中的秒数可以使用<code>/tools/time2sec.py</code>计算，输入格式为<code>hour:minute</code>
+
+> [!IMPORTANT]
+> <code>times_normal</code>和<code>times_weekends</code>分别代表工作日和双休日的时间安排，程序会根据classes中当日的课程数读取这里面存储的时间。<br/>
+> 如果您的学校工作日和双休日的作息相同，请将两部分相同设置。
 
 4. 编辑<code>/js/index.js</code>中的<code>UpdateShutDown</code>函数，这里设置的是每天自动关机的时间。时间的表示方式和第三步中一致。<br/>
 文件中给出的三个if判断中，第一个判断代表的是每天例行的关机时间；后两个判断则分别代表双休日和工作日的特殊关机情况。<br/>
