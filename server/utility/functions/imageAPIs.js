@@ -19,7 +19,10 @@ function GetImage(getData, res) {
     } else {
         api_stat = '{"status" : "false", "id" : ""}';
         fs.readdir("server/data/images", (err, files) => {
-            if (files.length <= 0) {
+            let pngFiles = files.filter(file => file.endsWith(".png"));
+            console.log(files, pngFiles)
+
+            if (pngFiles.length <= 0) {
                 requestAPIimage('http://t.alcy.cc/fj/', function(data, file_name) {
                     api_stat = '{"status" : "true", "id" : "' + file_name + '"}';
                     api_img_data = data;
@@ -29,8 +32,9 @@ function GetImage(getData, res) {
                 return;
             }
             
-            let rand_id = Math.floor(getRandomArbitrary(0, files.length));
-            let fileName = files[rand_id];
+
+            let rand_id = Math.floor(getRandomArbitrary(0, pngFiles.length));
+            let fileName = pngFiles[rand_id];
             let url = "http://localhost:8080/data/images/" + fileName;
             requestAPIimage(url, function(data) {
                 res.writeHead(200, { 'Content-Type': 'image/jpeg' });
