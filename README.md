@@ -50,7 +50,6 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 
 ### 注意事项
 1. 由于现阶段服务器必须运行在127.0.0.1:80上，且自动关机功能由服务器实现，所以请勿远程访问服务器。
-2. 现阶段，请勿在<code>/server/data/images</code>中存放非.png文件。否则可能导致壁纸黑图。
 3. 以上问题将在近期解决。
 
 ## 技术细节
