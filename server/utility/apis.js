@@ -50,13 +50,16 @@ function Process(req, res, getData) {
             res.end('error');
         }
 
+    // 获取课表
     } else if (url == "/api/getCalendar") {
         res.writeHead(200, { 'Content-Type': 'text', 'Charset': 'UTF-8' });
         res.end(CalendarAPIs.GetCalendar(getData));
 
+    // 获取天气
     } else if (url == "/api/getWeather") {
-        WeatherAPIs.GetWeather(res);
-        
+        WeatherAPIs.GetWeather(getData, res);
+    
+    // 获取标志
     } else if (url == "/api/getWeatherIcon") {
         if (parameters["weather"] != undefined && parameters["weather"] != null) {
             res.writeHead(200, {'Content-Type': 'text'});
