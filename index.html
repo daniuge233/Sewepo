@@ -20,7 +20,7 @@
     <div id="content">
         <div class="box" id="time">
             <div class="container">
-                <!-- <span>现在是</span> -->
+                <span>现在是</span>
                 <span class="timer">11 : 45 : 14</span>
                 <span class="dater"></span>
             </div>
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <div id="btnContainer">
+        <div id="btnContainer" class="box">
             <div class="box btn" id="changewallpaper" onclick="SetBackground()">
                 <div class="container">
                     切换壁纸
@@ -46,6 +46,12 @@
             <div class="box btn" id="save" onclick="CacheImage()">
                 <div class="container">
                     缓存图片
+                </div>
+            </div>
+
+            <div class="box btn" id="gu" onclick="location.reload()">
+                <div class="container">
+                    全局刷新
                 </div>
             </div>
         </div>
