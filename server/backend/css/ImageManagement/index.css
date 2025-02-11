@@ -1,0 +1,20 @@
+#box_functional {
+    width: 65vw;
+    height: 6vh;
+
+    margin-bottom: 5vh;
+}
+
+#box_functional .button {
+    margin-right: 2vw;
+}
+
+#box_image {
+    width: 18.15vw;
+    height: 30vh;
+    overflow: hidden;
+    display: inline-block;
+    margin: 1vw;
+    background-image: url("http://localhost:8080/api/getImage");
+    background-size: cover;
+}
