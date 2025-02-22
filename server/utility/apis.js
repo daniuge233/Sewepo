@@ -1,6 +1,6 @@
 const URL = require('url');
 
-const ImageAPIs = require('./functions/ImageAPIs');
+const ImageAPIs = require('./functions/imageAPIs');
 const SystemAPIs = require('./functions/systemAPIs');
 const CalendarAPIs = require('./functions/calendarAPIs');
 const WeatherAPIs = require('./functions/weatherAPIs');
