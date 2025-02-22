@@ -1,6 +1,6 @@
 #time {
     width: 20vw;
-    height: 18vh;
+    height: 16vh;
 }
 
 .timer {
@@ -11,7 +11,7 @@
 
 #weather {
     width: 22vw;
-    height: 18vh;
+    height: 16vh;
 }
 
 #weather .container {
@@ -47,7 +47,7 @@
 
 #changewallpaper {
     width: 10vw;
-    height: 4.5vh;
+    height: 5.5vh;
 }
 
 #save {
@@ -57,5 +57,28 @@
 
 #gu {
     width: 10vw;
-    height: 4.5vh;
+    height: 5.5vh;
+}
+
+
+.content_top {
+    position: absolute;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+    top: 3vh;
+    /* height: 25%; */
+    width: 100%;
+}
+
+.content_bottom {
+    position: absolute;
+    bottom: 8vh;
+}
+
+#btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
 }

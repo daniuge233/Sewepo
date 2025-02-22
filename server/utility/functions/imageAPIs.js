@@ -7,10 +7,10 @@ var api_stat = "false";
 
 // 随机图片
 function GetImage(getData, res) {
-    const rand_base = Math.floor(getRandomArbitrary(0, 10));
-    // const rand_base = 999;
+    // const rand_base = Math.floor(getRandomArbitrary(0, 10));
+    const rand_base = 999;
     if (rand_base <= 5) {
-        requestAPIimage('http://t.alcy.cc/fj/', function(data, file_name) {
+        requestAPIimage('http://t.alcy.cc/ys/', function(data, file_name) {
             api_stat = '{"status" : "true", "id" : "' + file_name + '"}';
             api_img_data = data;
             res.writeHead(200, { 'Content-Type': 'image/jpeg' });
@@ -19,12 +19,12 @@ function GetImage(getData, res) {
     } else {
         api_stat = '{"status" : "false", "id" : ""}';
         fs.readdir("server/data/images", (err, files) => {
-            let pngFiles = files.filter(file => file.endsWith(".png"));
+            var pngFiles = files.filter(file => (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".jpeg")));
             console.log(files, pngFiles)
 
             if (pngFiles.length <= 0) {
-                requestAPIimage('http://t.alcy.cc/fj/', function(data, file_name) {
-                    api_stat = '{"status" : "true", "id" : "' + file_name + '"}';
+                    requestAPIimage('http://t.alcy.cc/ys/', function(data, file_name) {
+                    api_stat = '{"status" : "true", "id" : "' + file_name + '"}'; 
                     api_img_data = data;
                     res.writeHead(200, { 'Content-Type': 'image/jpeg' });
                     res.end(data);
@@ -33,7 +33,7 @@ function GetImage(getData, res) {
             }
             
 
-            let rand_id = Math.floor(getRandomArbitrary(0, pngFiles.length));
+            let rand_id = Math.floor(getRandomArbitrary(0, pngFiles.length)); 
             let fileName = pngFiles[rand_id];
             let url = "http://localhost:8080/data/images/" + fileName;
             requestAPIimage(url, function(data) {

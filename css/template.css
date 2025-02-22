@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     /* background: url() center/cover no-repeat; */
-    overflow: hidden;
+    /* overflow: hidden; */
     color: white;
     user-select: none;
     -webkit-user-select: none;
@@ -11,7 +11,7 @@ body {
     justify-content: center;
     overflow: hidden;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
 }
 
 body::before {
@@ -54,7 +54,7 @@ i {
 
 .box {
     position: relative;
-    /* display: block; */
+    display: flex;
     background-color: rgba(210, 210, 210, 0.2);
     border-radius: 17px;
 
@@ -63,8 +63,8 @@ i {
     margin-top: 0.5vw;
     margin-bottom: 0.5vw;
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(1vw);
+    -webkit-backdrop-filter: blur(1vw);
 }
 
 .btn {
@@ -74,10 +74,10 @@ i {
 }
 
 #content {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-wrap: wrap;
     width: 70vw;
 }

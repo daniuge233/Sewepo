@@ -3,7 +3,7 @@
 
 <head>
     <title>six</title>
-    
+
     <link rel="stylesheet" type="text/css" href="./css/template.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/qweather-icons.css">
@@ -18,49 +18,46 @@
 
 <body id="body" class="body_custom">
     <div id="content">
-        <div class="box" id="time">
-            <div class="container">
-                <span>现在是</span>
-                <span class="timer">11 : 45 : 14</span>
-                <span class="dater"></span>
+        <div class="content_top">
+            <div class="box " id="time">
+                <div class="container">
+                    <span class="timer">11 : 45 : 14</span>
+                    <span class="dater"></span>
+                </div>
             </div>
+
+            <div class="box " id="weather">
+                <div class="container">
+                    <i class="" id="weather-icon"></i>
+                    <div id="weatherInfoContainer">
+                        <span class="weatherer"></span>
+                        <span class="weatherother"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="btnContainer" class="box">
+                <div class="box btn" id="changewallpaper" onclick="SetBackground()">
+                    <div class="container">
+                        切换壁纸
+                    </div>
+                </div>
+
+                <div class="box btn" id="gu" onclick="location.reload()">
+                    <div class="container">
+                        全局刷新
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="box" id="weather">
-            <div class="container">
-                <i class="" id="weather-icon"></i>
-                <div id="weatherInfoContainer">
-                    <span class="weatherer"></span>
-                    <span class="weatherother"></span>
-                </div>
-            </div>
-        </div>
-
-        <div id="btnContainer" class="box">
-            <div class="box btn" id="changewallpaper" onclick="SetBackground()">
-                <div class="container">
-                    切换壁纸
-                </div>
-            </div>
-
-            <div class="box btn" id="save" onclick="CacheImage()">
-                <div class="container">
-                    缓存图片
-                </div>
-            </div>
-
-            <div class="box btn" id="gu" onclick="location.reload()">
-                <div class="container">
-                    全局刷新
-                </div>
-            </div>
-        </div>
-
-        <div class="box" id="calendar">
+        <div class="box content_bottom" id="calendar">
             <div class="container" id="calendar_container">
                 <!-- 这里存储的是今日的课表，自动获取 -->
             </div>
         </div>
+
     </div>
 </body>
 

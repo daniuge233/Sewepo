@@ -75,3 +75,5 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 | QWeather Icons | [https://icons.qweather.com/](https://icons.qweather.com/) |
 | 栗次元 | [https://t.alcy.cc/](https://t.alcy.cc/) |
 | 小枫公益API | [http://node.api.xfabe.com/](https://node.api.xfabe.com/) |
+
+### ©2025 daniuge233.
