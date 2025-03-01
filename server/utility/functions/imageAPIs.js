@@ -8,9 +8,10 @@ var api_stat = "false";
 // 随机图片
 function GetImage(getData, res) {
     // const rand_base = Math.floor(getRandomArbitrary(0, 10));
+    const API = getData().imageAPI;
     const rand_base = 999;
     if (rand_base <= 5) {
-        requestAPIimage('http://t.alcy.cc/ys/', function(data, file_name) {
+        requestAPIimage(API, function(data, file_name) {
             api_stat = '{"status" : "true", "id" : "' + file_name + '"}';
             api_img_data = data;
             res.writeHead(200, { 'Content-Type': 'image/jpeg' });
@@ -23,7 +24,7 @@ function GetImage(getData, res) {
             console.log(files, pngFiles)
 
             if (pngFiles.length <= 0) {
-                    requestAPIimage('http://t.alcy.cc/ys/', function(data, file_name) {
+                    requestAPIimage(API, function(data, file_name) {
                     api_stat = '{"status" : "true", "id" : "' + file_name + '"}'; 
                     api_img_data = data;
                     res.writeHead(200, { 'Content-Type': 'image/jpeg' });
