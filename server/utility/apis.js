@@ -58,7 +58,7 @@ function Process(req, res, getData) {
     // 获取天气
     } else if (url == "/api/getWeather") {
         WeatherAPIs.GetWeather(getData, res);
-    
+
     // 获取标志
     } else if (url == "/api/getWeatherIcon") {
         if (parameters["weather"] != undefined && parameters["weather"] != null) {

@@ -14,10 +14,19 @@ var timer;
 // 天气
 var weather_icon;
 var weatherer;
+var weatherDay;
 var weatherother;
 
 // data中的数据解析后的对象
 var data_obj;
+
+// 天气更新倒计时
+var WeatherUpdateCountDown = -2;
+var WeatherCur = 0;
+// 今日天气数据
+var temp_today, high_today, low_today, rain_today;
+// 明日天气数据
+var temp_tomorrow, high_tomorrow, low_tomorrow, rain_tomorrow;
 
 $(document).ready(function () {
     now = new Date();
@@ -36,6 +45,7 @@ function InitObjects() {
 
     weather_icon = document.getElementById("weather-icon");
     weatherer = document.getElementsByClassName("weatherer")[0];
+    weatherDay = document.getElementsByClassName("day")[0];
     weatherother = document.getElementsByClassName("weatherother")[0]
 }
 
@@ -67,30 +77,66 @@ setInterval(() => {
     now = new Date();
     cur = getSecondsOfDay(now);
 
+    WeatherUpdateCountDown += 1;
+
     UpdateTime();
     UpdateCalendar();
+    // 每隔20秒切换一次今/明天天气
+    if (WeatherUpdateCountDown >= 10 || WeatherUpdateCountDown == -1) {
+        UpdateWeather(WeatherCur);
+        WeatherCur == 1 ? WeatherCur = 0 : WeatherCur = 1;
+        WeatherUpdateCountDown = 0
+    }
     UpdateShutDown();
 }, 1000);
 
 function GeneralUpdate() {
-    UpdateWeather();
+    GetWeather();
     UpdateTime();
     UpdateCalendar();
     SetBackground();
 }
 
-function UpdateWeather() {
+function GetWeather() {
     $.get("http://localhost:8080/api/getWeather", function (res) {
         let dat = jQuery.parseJSON(res);
 
-        weatherer.innerHTML = dat.temp;
-        weatherother.innerHTML = `${dat.low} ~ ${dat.high} | ${dat.rainfall}`;
+        temp_today = dat[0].temp, low_today = dat[0].low, high_today = dat[0].high, rain_today = dat[0].rainfall;
+        temp_tomorrow = dat[1].temp, low_tomorrow = dat[1].low, high_tomorrow = dat[1].high, rain_tomorrow = dat[1].rainfall;
 
-        $.get("http://localhost:8080/api/getWeatherIcon?weather=" + dat.temp, function (res) {
-            document.getElementById("weather-icon").classList = [res];
-        })
+        console.log(temp_today, low_today, high_today, rain_today);
+        console.log(temp_tomorrow, low_tomorrow, high_tomorrow, rain_tomorrow);
     })
+}
 
+function UpdateWeather(day) {
+    switch(day) {
+        case 0:
+            weatherer.innerHTML = temp_today;
+            weatherDay.innerHTML = "今天";
+            weatherother.innerHTML = `${low_today} ~ ${high_today} | ${rain_today}`;
+            $.get("http://localhost:8080/api/getWeatherIcon?weather=" + temp_today, function (res) {
+                document.getElementById("weather-icon").classList = [res];
+            })
+            break;
+
+        case 1:
+            weatherer.innerHTML = temp_tomorrow;
+            weatherDay.innerHTML = "明天";
+            weatherother.innerHTML = `${low_tomorrow} ~ ${high_tomorrow} | ${rain_tomorrow}`;
+            $.get("http://localhost:8080/api/getWeatherIcon?weather=" + temp_tomorrow, function (res) {
+                document.getElementById("weather-icon").classList = [res];
+            })
+            break;
+        default:
+            weatherer.innerHTML = temp_today;
+            weatherother.innerHTML = `${low_today} ~ ${high_today} | ${rain_today}`;
+            weatherDay.innerHTML = "今天";
+            $.get("http://localhost:8080/api/getWeatherIcon?weather=" + temp_today, function (res) {
+                document.getElementById("weather-icon").classList = [res];
+            })
+            break;
+    }
 }
 
 function UpdateTime() {
