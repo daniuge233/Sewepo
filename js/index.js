@@ -114,7 +114,7 @@ function UpdateWeather(day) {
         case 0:
             weatherer.innerHTML = temp_today;
             weatherDay.innerHTML = "今天";
-            weatherother.innerHTML = `${low_today} ~ ${high_today} | ${rain_today}`;
+            weatherother.innerHTML = `${low_today} ~ ${high_today} ｜ ${rain_today}`;
             $.get("http://localhost:8080/api/getWeatherIcon?weather=" + temp_today, function (res) {
                 document.getElementById("weather-icon").classList = [res];
             })
@@ -123,14 +123,14 @@ function UpdateWeather(day) {
         case 1:
             weatherer.innerHTML = temp_tomorrow;
             weatherDay.innerHTML = "明天";
-            weatherother.innerHTML = `${low_tomorrow} ~ ${high_tomorrow} | ${rain_tomorrow}`;
+            weatherother.innerHTML = `${low_tomorrow} ~ ${high_tomorrow} ｜ ${rain_tomorrow}`;
             $.get("http://localhost:8080/api/getWeatherIcon?weather=" + temp_tomorrow, function (res) {
                 document.getElementById("weather-icon").classList = [res];
             })
             break;
         default:
             weatherer.innerHTML = temp_today;
-            weatherother.innerHTML = `${low_today} ~ ${high_today} | ${rain_today}`;
+            weatherother.innerHTML = `${low_today} ~ ${high_today} ｜ ${rain_today}`;
             weatherDay.innerHTML = "今天";
             $.get("http://localhost:8080/api/getWeatherIcon?weather=" + temp_today, function (res) {
                 document.getElementById("weather-icon").classList = [res];
