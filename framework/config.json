@@ -1,0 +1,10 @@
+{
+    "ServicePort": 8080,
+
+    "注释": "这里是颜色配置",
+    "Styles": {
+        "MainColor": "#48b3ff",
+        "ColorScheme": "analogous",
+        "BackgroundMode": "light"
+    }
+}

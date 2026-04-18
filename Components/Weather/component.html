@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./qweather-icons/qweather-icons.css">
+</head>
+<body>
+    <div class="container sw-shell is-padded">
+        <div class="weather-card sw-card">
+            <div class="weather-hero">
+                <div class="weather-meta">
+                    <p class="weather-kicker" id="weatherCity">加载中...</p>
+                    <h2 class="weather-city" id="weatherText">正在获取天气数据</h2>
+                    <p class="weather-precip" id="weatherPrecip">降水 --</p>
+                    <p class="weather-uv" id="weatherUv">紫外线 --</p>
+                </div>
+
+                <div class="weather-current">
+                    <i class="weather-icon qi-999" id="weatherIcon" aria-hidden="true"></i>
+                    <div class="weather-temp" id="weatherTemp">--°</div>
+                </div>
+            </div>
+
+            <div class="forecast-list" id="forecastList"></div>
+        </div>
+    </div>
+    <script src="./weather.js"></script>
+</body>
+</html>

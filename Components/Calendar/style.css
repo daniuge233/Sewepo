@@ -1,0 +1,158 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    --sw-card-padding: 0;
+    color: var(--color-text-on-background);
+}
+
+.date-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: color-mix(in srgb, var(--color-primary) 16%, transparent);
+    color: var(--color-text-on-background, #f5f7fa);
+    padding: 14px 14px 12px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin: 10px 10px 8px;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+}
+
+.day-number {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.date-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+}
+
+.year-month {
+    font-size: 0.82rem;
+    opacity: 0.88;
+    letter-spacing: 0.05em;
+}
+
+.weekday-label {
+    font-size: 0.82rem;
+    opacity: 0.88;
+    letter-spacing: 0.1em;
+}
+
+.calendar-section {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: color-mix(in srgb, var(--color-surface) 92%, white 8%);
+    border-radius: 12px;
+    padding: 10px;
+    overflow: visible;
+    margin: 0 10px 10px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+    position: relative;
+}
+
+.weekday-headers {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--color-text-on-background, #1f2329);
+    opacity: 0.5;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+}
+
+.weekday-headers .weekend {
+    color: var(--color-secondary, #6d7df9);
+    opacity: 0.75;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 2rem;
+    align-content: start;
+    gap: 2px 0;
+}
+
+.cal-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.86rem;
+    color: var(--color-text-on-background, #1f2329);
+    border-radius: 50%;
+    width: 1.78rem;
+    height: 1.78rem;
+    margin: auto;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.cal-cell:hover {
+    transform: scale(1.04);
+}
+
+.cal-cell.other-month {
+    opacity: 0.28;
+}
+
+.cal-cell.weekend {
+    color: var(--color-secondary, #6d7df9);
+}
+
+.cal-cell.today {
+    background: color-mix(in srgb, var(--color-primary) 80%, white 20%);
+    color: var(--color-text-on-primary, #f5f7fa) !important;
+    font-weight: 700;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+
+.cal-cell.selected {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-secondary) 55%, var(--color-border));
+    background: color-mix(in srgb, var(--color-secondary) 20%, var(--color-surface));
+}
+
+.cal-bubble {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-9999px, -9999px);
+    pointer-events: none;
+    z-index: 20;
+    max-width: 240px;
+    padding: 8px 10px;
+    font-size: 0.73rem;
+    line-height: 1.35;
+    color: var(--color-text-on-background);
+    border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 48%, var(--color-border));
+    background: color-mix(in srgb, var(--color-surface) 94%, white 6%);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    transition: opacity 140ms ease;
+}
+
+.cal-bubble.show {
+    opacity: 1;
+}
+
+.cal-bubble.align-left {
+    max-width: 300px;
+}
+
+.cal-bubble.align-right {
+    max-width: 210px;
+    text-align: right;
+}

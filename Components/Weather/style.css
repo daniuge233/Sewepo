@@ -1,0 +1,139 @@
+@import url("/css/componentCard.css");
+
+.container {
+    color: var(--color-text-on-background);
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weather-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-border));
+    background: color-mix(in srgb, var(--color-primary) 16%, transparent);
+}
+
+.weather-meta {
+    min-width: 0;
+}
+
+.weather-kicker {
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.72;
+}
+
+.weather-city {
+    margin: 4px 0 6px;
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+.weather-precip {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.86;
+}
+
+.weather-uv {
+    margin: 4px 0 0;
+    font-size: 13px;
+    opacity: 0.78;
+}
+
+.weather-current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.weather-icon {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.weather-temp {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 1;
+}
+
+.forecast-list {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    min-height: 0;
+}
+
+.forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 6px;
+}
+
+.forecast-item.is-today {
+    border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+    background: color-mix(in srgb, var(--color-primary) 18%, var(--color-surface));
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+
+.forecast-weekday {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.forecast-date {
+    font-size: 11px;
+    opacity: 0.64;
+}
+
+.forecast-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.forecast-text {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.forecast-temp {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.forecast-precip {
+    font-size: 11px;
+    opacity: 0.76;
+}
+
+.forecast-uv {
+    font-size: 11px;
+    opacity: 0.72;
+}
+
+@media (max-width: 720px) {
+    .weather-card {
+        overflow: auto;
+    }
+
+    .forecast-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

@@ -1,0 +1,31 @@
+/* 一套供参考的主题设计 */
+.sw-shell {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.sw-shell.is-padded {
+    padding: 14px;
+}
+
+.sw-card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    border-radius: var(--sw-card-radius, 16px);
+    padding: var(--sw-card-padding, 14px);
+    color: var(--color-text-on-background);
+    border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+    background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 50%),
+        linear-gradient(145deg, color-mix(in srgb, var(--color-surface) 86%, white 14%), var(--color-surface));
+}
+
+.sw-panel {
+    border-radius: var(--sw-panel-radius, 12px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+    background: color-mix(in srgb, var(--color-surface) 92%, white 8%);
+}

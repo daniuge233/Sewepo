@@ -1,0 +1,73 @@
+@import url("/css/componentCard.css");
+
+.container {
+	color: var(--color-text-on-background);
+}
+
+.jo-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.jo-kicker {
+	margin: 0;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	opacity: 0.74;
+}
+
+.jo-quote {
+	margin: 0;
+	font-size: 22px;
+	line-height: 1.45;
+	letter-spacing: 0.01em;
+	font-weight: 600;
+	padding: 2px 2px 0;
+}
+
+.jo-source {
+	margin: 0;
+	font-size: 14px;
+	opacity: 0.82;
+}
+
+.jo-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.jo-status {
+	font-size: 12px;
+	opacity: 0.66;
+}
+
+.jo-btn {
+	border: 1px solid color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+	background: color-mix(in srgb, var(--color-primary) 18%, var(--color-surface));
+	color: var(--color-text-on-background);
+	border-radius: 10px;
+	padding: 7px 12px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 140ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.jo-btn:hover {
+	background: color-mix(in srgb, var(--color-primary) 26%, var(--color-surface));
+	border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+}
+
+.jo-btn:active {
+	transform: translateY(1px);
+}
+
+.jo-btn:disabled {
+	opacity: 0.6;
+	cursor: wait;
+}

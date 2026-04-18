@@ -1,0 +1,16 @@
+{
+    "ShutDownTimes": [
+        {
+            "Time": "23:30",
+            "When": "EVERYDAY"
+        },
+        {
+            "Time": "12:18",
+            "When": "WORKDAYS"
+        },
+        {
+            "Time": "11:53",
+            "When": "WEEKENDS"
+        }
+    ]
+}

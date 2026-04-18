@@ -1,0 +1,7 @@
+{
+    "Name": "Shutdown",
+    "Description": "Sewepo定时关机组件",
+    "Version": "1.0.0",
+    "Author": "daniuge233",
+    "Entry": "main.js"
+}

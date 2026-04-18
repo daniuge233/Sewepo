@@ -1,0 +1,15 @@
+/* SEWEPO_THEME_START */
+:root {
+    --color-primary: #48b3ff;
+    --color-secondary: #6d7df9;
+    --color-accent: #39ffe1;
+    --color-background: #f6f8f9;
+    --color-surface: #e9eef1;
+    --color-border: #cbd8e2;
+    --color-text-on-primary: #f5f7fa;
+    --color-text-on-background: #1f2329;
+    --color-primary-hover: #71c4ff;
+    --color-primary-active: #1fa2ff;
+    --color-primary-disabled: #c2e0f5;
+}
+/* SEWEPO_THEME_END */

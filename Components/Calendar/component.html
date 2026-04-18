@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container sw-card">
+        <div class="date-header">
+            <div id="cal-day" class="day-number"></div>
+            <div class="date-meta">
+                <div id="cal-year-month" class="year-month"></div>
+                <div id="cal-weekday" class="weekday-label"></div>
+            </div>
+        </div>
+
+        <div class="calendar-section">
+            <div class="weekday-headers">
+                <span>一</span>
+                <span>二</span>
+                <span>三</span>
+                <span>四</span>
+                <span>五</span>
+                <span class="weekend">六</span>
+                <span class="weekend">日</span>
+            </div>
+            <div id="cal-grid" class="cal-grid"></div>
+            <div class="cal-bubble" id="cal-bubble" aria-live="polite"></div>
+        </div>
+    </div>
+    <script src="./calendar.js"></script>
+</body>
+</html>

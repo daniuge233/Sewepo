@@ -1,0 +1,36 @@
+{
+    "Name": "Timetable",
+    "Description": "Sewepo基本课表组件",
+    "Version": "1.0.0",
+    "Author": "daniuge233",
+    "Entry": "main.js",
+    "Appearence": "component.html",
+
+    "Size": {
+        "Top": 1,
+        "Left": 20,
+        "Width": 3,
+        "Height": 11
+    },
+
+    "Dependencies": [
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/basic.css"
+        },
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/colorTemplate.css"
+        },
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/template.css"
+        },
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/componentCard.css"
+        }
+    ],
+
+    "Config": "./config.json"
+}

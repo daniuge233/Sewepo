@@ -1,0 +1,26 @@
+{
+  "name": "sewepo",
+  "version": "1.0.0",
+  "description": "Multifunctional Wallpaper for Classroom Multimedia",
+  "homepage": "https://github.com/daniuge233/Sewepo#readme",
+  "bugs": {
+    "url": "https://github.com/daniuge233/Sewepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniuge233/Sewepo.git"
+  },
+  "license": "MIT",
+  "author": "daniuge233",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.15.0",
+    "child_process": "^1.0.2",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security"
+  }
+}

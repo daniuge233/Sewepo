@@ -1,0 +1,34 @@
+{
+    "Name": "JustOne",
+    "Description": "Sewepo一句组件",
+    "Version": "1.0.0",
+    "Author": "daniuge233",
+    "Entry": "main.js",
+    "Appearence": "component.html",
+
+    "Size": {
+        "Top": 9,
+        "Left": 8,
+        "Width": 11,
+        "Height": 3
+    },
+
+    "Dependencies": [
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/basic.css"
+        },
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/colorTemplate.css"
+        },
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/template.css"
+        },
+        {
+            "Type": "text/css",
+            "Src": "http://localhost:8080/css/componentCard.css"
+        }
+    ]
+}
