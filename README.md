@@ -127,13 +127,24 @@ _别慌，一步步慢慢来~_
 
 | 名称 | 位置 | 版本 | 官网链接 | 许可证 |
 | --- | --- | --- | --- | --- |
-| Node.js | /tools/node.exe | v24.14.1 | <https://nodejs.org> | <https://github.com/nodejs/node/blob/main/LICENSE> |
+| Node.js | tools/node.exe | v24.14.1 | <https://nodejs.org> | <https://github.com/nodejs/node/blob/main/LICENSE> |
 | WinSW | Sewepo.exe | v3.0.0-alpha.11 | <https://github.com/winsw/winsw> | <https://github.com/winsw/winsw/blob/v3/LICENSE.txt> |
 
 版本历史
 ----------
 
 - 2026/04/25 1.0.0 Sewepo第一个版本。
+
+To-Do List
+----------
+
+- [ ] 完善README.md，展开讲依赖配置以及壁纸引擎配置。
+- [ ] 移除Node.Js内嵌，改为自行安装。
+- [ ] 增加后台管理，实现配置流程完全GUI化。
+- [ ] 添加新闻Component等。
+
+高中生要以学业为重，我做的可能很慢...  
+各位稍安勿躁 ~
 
 项目结构
 ----------
@@ -142,6 +153,8 @@ _别慌，一步步慢慢来~_
 Sewepo/
 ├─ Components/                  # 组件库，即实际显示内容
 ├─ framework/                   # Sewepo框架
+│  ├─ api/                      # Sewepo应用程序接口
+│  ├─ statics/                  # 静态资源，包括页面、样式等
 │  ├─ utils/                    # 一些辅助脚本，如智能配色器
 │  ├─ componentHandler.js       # 组件相关
 │  ├─ config.json               # Sewepo基础配置文件
@@ -162,5 +175,4 @@ Sewepo/
 版权声明
 ----------
 
-Copyright (c) daniuge233, All Rights Reserved.
-Licensed under the [MIT License](https://opensource.org/license/MIT).
+Copyright (c) daniuge233. Licensed under the [MIT License](https://opensource.org/license/MIT).
