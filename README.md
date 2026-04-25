@@ -123,12 +123,20 @@ _别慌，一步步慢慢来~_
 8. 配置完成。如果配置正确，您将看到您的壁纸被更换为Sewepo提供的功能组件。
 9. 当需要卸载时，请运行 ``uninstall.bat``。程序会自动关闭开机自启功能。
 
+To-Do List
+----------
+
+- [ ] 完善README，增加对依赖配置和壁纸引擎配置的说明。
+- [ ] 移除Node.Js内嵌，改为自行安装。
+- [ ] 实现后台管理，完成配置的全流程GUI化。
+- [ ] 实现新闻Component等。
+
 引用项目
 ----------
 
 | 名称 | 位置 | 版本 | 官网链接 | 许可证 |
 | --- | --- | --- | --- | --- |
-| Node.js | /tools/node.exe | v24.14.1 | <https://nodejs.org> | <https://github.com/nodejs/node/blob/main/LICENSE> |
+| Node.js | tools/node.exe | v24.14.1 | <https://nodejs.org> | <https://github.com/nodejs/node/blob/main/LICENSE> |
 | WinSW | Sewepo.exe | v3.0.0-alpha.11 | <https://github.com/winsw/winsw> | <https://github.com/winsw/winsw/blob/v3/LICENSE.txt> |
 
 版本历史
@@ -143,6 +151,8 @@ _别慌，一步步慢慢来~_
 Sewepo/
 ├─ Components/                  # 组件库，即实际显示内容
 ├─ framework/                   # Sewepo框架
+│  ├─ api/                      # Sewepo应用程序接口
+|  ├─ statics/                  # 静态资源，包含页面和样式等
 │  ├─ utils/                    # 一些辅助脚本，如智能配色器
 │  ├─ componentHandler.js       # 组件相关
 │  ├─ config.json               # Sewepo基础配置文件
@@ -163,5 +173,4 @@ Sewepo/
 版权声明
 ----------
 
-Copyright (c) daniuge233, All Rights Reserved.
-Licensed under the [MIT License](https://opensource.org/license/MIT).
+Copyright (c) daniuge233, Licensed under the [MIT License](https://opensource.org/license/MIT).
