@@ -2,6 +2,7 @@ import Logger from "./framework/logger.js";
 import initalizer from "./framework/initalizer.js";
 import configHandler from "./framework/configHandler.js";
 import api from "./framework/api/api.js";
+import path from "path";
 
 import express from "express";
 
@@ -13,8 +14,11 @@ const app = express();
 const config = configHandler.getConfig();
 const port = config.ServicePort || 8080;
 
-app.use(express.static("./framework/statics"));
-app.use("/Components", express.static("./Components"));
+const staticRoot = path.join(import.meta.dirname, "framework", "statics");
+const componentsRoot = path.join(import.meta.dirname, "Components");
+
+app.use(express.static(staticRoot));
+app.use("/Components", express.static(componentsRoot));
 
 app.use("/api", api);
 

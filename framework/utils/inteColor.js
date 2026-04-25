@@ -170,7 +170,7 @@ function getLuminance(hex) {
  */
 function pickReadableText(bgHex) {
 	const lum = getLuminance(bgHex);
-	return lum > 0.45 ? "#1f2329" : "#f5f7fa";
+	return lum > 0.45 ? "#222220" : "#f5f7fa";
 }
 
 /**

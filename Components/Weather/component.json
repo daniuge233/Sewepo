@@ -16,19 +16,19 @@
     "Dependencies": [
         {
             "Type": "text/css",
-            "Src": "http://localhost:8080/css/basic.css"
+            "Src": "/css/basic.css"
         },
         {
             "Type": "text/css",
-            "Src": "http://localhost:8080/css/colorTemplate.css"
+            "Src": "/css/colorTemplate.css"
         },
         {
             "Type": "text/css",
-            "Src": "http://localhost:8080/css/template.css"
+            "Src": "/css/template.css"
         },
         {
             "Type": "text/css",
-            "Src": "http://localhost:8080/css/componentCard.css"
+            "Src": "/css/componentCard.css"
         }
     ]
 }

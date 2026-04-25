@@ -2,5 +2,5 @@
     "City": "济南",
     "GeoAPI": "https://n82mtfete6.re.qweatherapi.com/geo/v2/city/lookup",
     "BaseURL": "https://n82mtfete6.re.qweatherapi.com/v7/weather/7d",
-    "API_Key": "d9d4a93f31544991b5c1426bfd124844"
+    "API_Key": "YOUR_API_KEY_HERE"
 }

@@ -1,0 +1,17 @@
+<service>
+  <id>sewepo</id>
+  <name>Sewepo</name>
+  <description>Sewepo Node service</description>
+
+  <executable>%BASE%\tools\node.exe</executable>
+  <arguments>main.js</arguments>
+  <workingdirectory>%BASE%</workingdirectory>
+
+  <startmode>Automatic</startmode>
+
+  <onfailure action="restart" delay="5 sec"/>
+  <onfailure action="restart" delay="15 sec"/>
+  <onfailure action="none"/>
+
+  <log mode="none"/>
+</service>
