@@ -1,0 +1,12 @@
+{
+    "Name": "Escaper",
+    "Description": "Sewepo紧急脱险",
+    "Version": "1.0.0",
+    "Author": "daniuge233",
+    "Entry": "main.js",
+    "Appearence": "",
+
+    "Size": {},
+
+    "Dependencies": []
+}

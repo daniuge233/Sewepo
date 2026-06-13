@@ -1,0 +1,4 @@
+{
+    "EscapingProcesses": [""],
+    "EscapingWebsites": ["*.x.com", "*.google.com", "*.chatgpt.com", "*.daniuge233.icu"]
+}

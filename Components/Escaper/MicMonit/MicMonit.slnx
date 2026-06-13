@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MicMonit/MicMonit.vcxproj" Id="d4efc7e1-2bf9-4baa-9b53-d40a2d65f760" />
+</Solution>

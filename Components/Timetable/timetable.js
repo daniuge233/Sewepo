@@ -124,6 +124,32 @@ function renderRows(listEl, classes, schedule) {
 	return rows;
 }
 
+function getDisplayToken(displayInfo) {
+	return `${displayInfo.dayKey}|${displayInfo.isNextDay ? "1" : "0"}`;
+}
+
+function renderTimetableView(config, displayInfo, listEl, metaEl, titleEl) {
+	const dayKey = displayInfo.dayKey;
+	const scopeLabel = displayInfo.isNextDay ? "明日" : "今日";
+	titleEl.textContent = `${scopeLabel}课表`;
+
+	const dayClasses = Array.isArray(config?.Classes?.[dayKey]) ? config.Classes[dayKey] : [];
+	const schedule = isWeekend(dayKey)
+		? (Array.isArray(config?.Timetable_Weekends) ? config.Timetable_Weekends : [])
+		: (Array.isArray(config?.Timetable_Normal) ? config.Timetable_Normal : []);
+
+	listEl.innerHTML = "";
+
+	if (dayClasses.length === 0) {
+		metaEl.textContent = `${scopeLabel}无课程`;
+		listEl.innerHTML = `<p class="tt-empty">${scopeLabel}没有需要显示的课程。</p>`;
+		return [];
+	}
+
+	metaEl.textContent = `${scopeLabel} ${getDayLabel(dayKey)} · 共 ${dayClasses.length} 节`;
+	return renderRows(listEl, dayClasses, schedule);
+}
+
 async function initTimetableCard() {
 	const listEl = document.getElementById("ttList");
 	const metaEl = document.getElementById("ttMeta");
@@ -140,33 +166,32 @@ async function initTimetableCard() {
 		}
 
 		const config = await resp.json();
-		const displayInfo = getDisplayDayInfo(config);
-		const dayKey = displayInfo.dayKey;
-		const scopeLabel = displayInfo.isNextDay ? "明日" : "今日";
-		titleEl.textContent = `${scopeLabel}课表`;
-		const dayClasses = Array.isArray(config?.Classes?.[dayKey]) ? config.Classes[dayKey] : [];
-		const schedule = isWeekend(dayKey)
-			? (Array.isArray(config?.Timetable_Weekends) ? config.Timetable_Weekends : [])
-			: (Array.isArray(config?.Timetable_Normal) ? config.Timetable_Normal : []);
-
-		if (dayClasses.length === 0) {
-			metaEl.textContent = `${scopeLabel}无课程`;
-			listEl.innerHTML = '<p class="tt-empty">今天没有需要显示的课程。</p>';
-			return;
-		}
-
-		metaEl.textContent = `${scopeLabel} ${getDayLabel(dayKey)} · 共 ${dayClasses.length} 节`;
-		const rows = renderRows(listEl, dayClasses, schedule);
+		let displayInfo = getDisplayDayInfo(config);
+		let displayToken = getDisplayToken(displayInfo);
+		let rows = renderTimetableView(config, displayInfo, listEl, metaEl, titleEl);
 
 		if (displayInfo.isNextDay) {
 			clearHighlight(rows);
 		} else {
 			updateHighlight(rows);
-
-			setInterval(() => {
-				updateHighlight(rows);
-			}, 15000);
 		}
+
+		setInterval(() => {
+			const nextInfo = getDisplayDayInfo(config);
+			const nextToken = getDisplayToken(nextInfo);
+
+			if (nextToken !== displayToken) {
+				displayInfo = nextInfo;
+				displayToken = nextToken;
+				rows = renderTimetableView(config, displayInfo, listEl, metaEl, titleEl);
+			}
+
+			if (displayInfo.isNextDay) {
+				clearHighlight(rows);
+			} else {
+				updateHighlight(rows);
+			}
+		}, 5000);
 	} catch (error) {
 		metaEl.textContent = "课表加载失败";
 		listEl.innerHTML = '<p class="tt-empty">无法读取课表配置，请检查 config.json。</p>';
